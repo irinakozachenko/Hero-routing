@@ -27,8 +27,6 @@ export class LoginComponent {
         this.router.navigate([redirectUrl]);
       }
     });
-
-
   }
 
   logout() {

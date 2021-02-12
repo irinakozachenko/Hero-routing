@@ -1,1 +1,10 @@
-<p>admin-dashboard works!</p>
+<p>Dashboard</p>
+
+<p>SessionId: {{sessionId | async}}</p>
+<a id="anchor"></a>
+<p>Token: {{token | async}}</p>
+
+Preloaded modules
+<ul>
+  <li *ngFor="let module of modules">{{module}}</li>
+</ul>

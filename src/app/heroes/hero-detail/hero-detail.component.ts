@@ -1,4 +1,4 @@
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -23,6 +23,7 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit() {
     this.hero$ = this.route.paramMap.pipe(
+     tap(x => console.log(3)),
       switchMap((params: ParamMap) =>
         this.service.getHero(params.get('id')))
     );
@@ -30,10 +31,7 @@ export class HeroDetailComponent implements OnInit {
 
   gotoHeroes(hero: Hero) {
     const heroId = hero ? hero.id : null;
-    // Pass along the hero id if available
-    // so that the HeroList component can select that hero.
-    // Include a junk 'foo' property for fun.
-    this.router.navigate(['/heroes/'],{queryParams: {id: 1, foo: 4}});
+    this.router.navigate(['/heroes/'], {queryParams: {id: heroId, foo: 4}});
   }
 }
 
