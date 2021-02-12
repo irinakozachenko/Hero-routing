@@ -12,11 +12,11 @@ export class AuthGuard implements CanActivate {
     private router: Router) { }
 
   canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): true|UrlTree {
-      const url: string = state.url;
-
-      return this.checkLogin(url);
+        route: ActivatedRouteSnapshot,
+        state: RouterStateSnapshot): true|UrlTree {
+    const url: string = state.url;
+    console.log(url);
+    return this.checkLogin(url);
   }
 
   checkLogin(url: string): true|UrlTree {
