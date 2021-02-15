@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map, tap } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AuthService } from '../auth.service';
 export class LoginComponent {
   message: string;
 
-  constructor(public authService: AuthService, public router: Router) {
+  constructor(private route: ActivatedRoute, public authService: AuthService, public router: Router) {
     this.setMessage();
    }
 
@@ -24,8 +25,11 @@ export class LoginComponent {
     this.authService.login().subscribe(() => {
       if (this.authService.isLoggedIn) {
         const redirectUrl = '/admin';
+
         this.router.navigate([redirectUrl]);
       }
+
+
     });
   }
 

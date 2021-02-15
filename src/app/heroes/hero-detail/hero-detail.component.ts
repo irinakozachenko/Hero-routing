@@ -31,7 +31,7 @@ export class HeroDetailComponent implements OnInit {
 
   gotoHeroes(hero: Hero) {
     const heroId = hero ? hero.id : null;
-    this.router.navigate(['/heroes/'], {queryParams: {id: heroId, foo: 4}});
+    this.router.navigate(['/superheroes/'], {queryParams: {id: heroId, foo: 4}});
   }
 }
 
