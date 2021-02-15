@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, switchMap, tap } from 'rxjs/operators';
 import { SelectivePreloadingStrategyService } from '../../selective-preloading-strategy.service';
 
 @Component({
@@ -26,7 +26,15 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit() {
     this.sessionId = this.route
       .queryParamMap
-      .pipe(map(params => params.get('session_id') || 'None'));
+      .pipe(
+        map(params =>
+          {
+            console.log(params.get('session_id'));
+            return params.get('session_id') || 'None';
+          })
+        );
+
+
 
     this.token = this.route
       .fragment

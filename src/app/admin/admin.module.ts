@@ -18,7 +18,7 @@ import { delay, tap } from 'rxjs/operators';
   ]
 })
 export class AdminModule {
-  isLogged = false;
+ /* isLogged = false;
 
   redirectUrl: string;
 
@@ -31,5 +31,5 @@ export class AdminModule {
 
   logout(): void {
     this.isLogged = false;
-  }
+  }*/
 }

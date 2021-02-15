@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { map, tap } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
 
@@ -11,7 +11,11 @@ import { AuthService } from '../auth.service';
 export class LoginComponent {
   message: string;
 
-  constructor(private route: ActivatedRoute, public authService: AuthService, public router: Router) {
+  constructor(
+      private route: ActivatedRoute,
+      public authService: AuthService,
+      public router: Router
+    ) {
     this.setMessage();
    }
 
@@ -25,8 +29,11 @@ export class LoginComponent {
     this.authService.login().subscribe(() => {
       if (this.authService.isLoggedIn) {
         const redirectUrl = '/admin';
-
-        this.router.navigate([redirectUrl]);
+        const navigationExtras: NavigationExtras = {
+          queryParamsHandling: 'preserve',
+          preserveFragment: true
+        };
+        this.router.navigate([redirectUrl], navigationExtras);
       }
 
 

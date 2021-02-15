@@ -5,6 +5,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
+import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/superheroes', pathMatch: 'full' },
@@ -32,7 +33,7 @@ const appRoutes: Routes = [
       appRoutes,
       {
         enableTracing: false, // <-- debugging purposes only
-        preloadingStrategy: PreloadAllModules
+        preloadingStrategy: SelectivePreloadingStrategyService
       }
     )
   ],
@@ -43,8 +44,4 @@ const appRoutes: Routes = [
 export class AppRoutingModule { }
 
 
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+
