@@ -11,21 +11,32 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { AdminModule } from './admin/admin.module';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthModule } from './auth/auth.module';
+import { Router, NavigationExtras } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    ComposeMessageComponent
+    ComposeMessageComponent,
+    LoginComponent
    ],
   imports: [
     BrowserModule,
     FormsModule,
     HeroesModule,
-    CrisisCenterModule,
+    AuthModule,
     AppRoutingModule,
     BrowserAnimationsModule,
 
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(router: Router) {
+    const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
+
+    console.log('Routes: ', JSON.stringify(router.config), replacer, 2);
+  }
+}

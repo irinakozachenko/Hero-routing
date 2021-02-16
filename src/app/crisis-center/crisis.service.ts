@@ -20,11 +20,13 @@ export class CrisisService {
 
   getCrisis(id: number | string) {
     return this.getCrisises().pipe(
-      map(crisis => crisis.find(crisis => crisis.id == +id))
+      map(crisis =>
+        crisis.find(crisis => crisis.id == +id)
+      )
     );
   }
 
-  addCrisis(name: string) {
+  /*addCrisis(name: string) {
     name = name.trim();
     if (name) {
       const crisis = {
@@ -35,4 +37,12 @@ export class CrisisService {
       this.crisis$.next(CRISES)
     }
   }
+
+  saveCrisis(crisis: Crisis) {
+    if (crisis) {
+      var c = CRISES.find(x => x.id === crisis.id);
+      c.name = crisis.name;
+      this.crisis$.next(CRISES)
+    }
+  }*/
 }
