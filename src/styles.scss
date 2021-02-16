@@ -56,7 +56,7 @@ body {
   padding: 0;
   width: 100%;
 
-  .list__item {
+  &__item {
     cursor: pointer;
     position: relative;
     left: 0;
@@ -71,7 +71,7 @@ body {
       left: .1em;
     }
 
-    &.list__item--selected {
+    &--selected {
       background-color: #CFD8DC;
       color: white;
 
@@ -81,19 +81,19 @@ body {
       }
     }
 
-    &.list__item--disabled {
+    &--disabled {
       opacity: 0.6;
-    }
-
-    .list__link {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      text-decoration: none;
     }
   }
 
-  .list__badge {
+   &__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+  }
+
+   &__badge {
     display: inline-block;
     font-size: small;
     color: white;
@@ -115,38 +115,37 @@ body {
 
 /* info */
 .info {
-  .info__title {
+  &__title {
     font-size: 16px;
     margin-bottom: 15px;
     font-weight: 500;
     font-weight: bold;
   }
 
-  .info__block {
+  &__block {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
-
-    .info__label {
-      margin-right: 10px;
-      font-weight: bold;
-    }
-
-    .info__value {
-      height: 20px;
-
-      &.info__value--text {
-        padding: 3px 5px;
-        width: 200px;
-      }
-
-      &.info__value--checkbox{
-        width: 20px;
-      }
-    }
-
-
   }
+
+  &__label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  &__value {
+    height: 20px;
+
+    &--text {
+      padding: 3px 5px;
+      width: 200px;
+    }
+
+    &--checkbox{
+      width: 20px;
+    }
+  }
+
 }
 
 /* end info list */
@@ -154,7 +153,7 @@ body {
 /* menu */
 
 .menu {
-  .menu__item {
+  &__item {
     padding: 5px 10px;
     text-decoration: none;
     margin-right: 10px;
@@ -162,17 +161,14 @@ body {
     display: inline-block;
     background-color: #eee;
     border-radius: 4px;
-
-    &:visited, &:link {
-      color: #607D8B;
-    }
+    color: #607D8B;
 
     &:hover {
       color: #039be5;
       background-color: #CFD8DC;
     }
 
-    &.menu__item--active {
+    &--active {
       color: #039be5;
     }
   }
