@@ -1,10 +1,21 @@
-<p>Dashboard</p>
+<div class="dashboard">
+  <h2>Dashboard</h2>
 
-<p>SessionId: {{sessionId | async}}</p>
-<a id="anchor"></a>
-<p>Token: {{token | async}}</p>
+  <div class="dashboard__block">
+    <label class="dashboard__label">SessionId: </label>
+    <span class="dashboard__value dashboard__value--text">{{sessionId | async}}</span>
+  </div>
 
-Preloaded modules
-<ul>
-  <li *ngFor="let module of modules">{{module}}</li>
-</ul>
+  <div class="dashboard__block">
+    <label class="dashboard__label">Token: </label>
+    <span class="dashboard__value dashboard__value--text">{{token | async}}</span>
+  </div>
+
+  <div class="dashboard__block">
+    <label class="dashboard__label">Preloaded modules: </label>
+    <ul class="dashboard__value dashboard__value--list">
+      <li *ngFor="let module of modules">{{module}}</li>
+    </ul>
+  </div>
+
+

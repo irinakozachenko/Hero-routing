@@ -1,8 +1,10 @@
-<ul class="crises">
+<ul class="list">
   <li *ngFor="let crisis of crises$ | async"
-    [class.selected]="crisis.id === selectedId">
-    <a [routerLink]="[crisis.id]">
-      <span class="badge">{{ crisis.id }}</span>{{ crisis.name }}
+    [class.list__item--selected]="crisis.id === selectedId"
+    class="list__item">
+    <a class="list__link" [routerLink]="[crisis.id]">
+      <span class="list__badge">{{ crisis.id }}</span>
+      <span>{{ crisis.name }}</span>
     </a>
   </li>
 </ul>

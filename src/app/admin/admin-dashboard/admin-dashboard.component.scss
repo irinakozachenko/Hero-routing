@@ -1,0 +1,18 @@
+.dashboard {
+  .dashboard__block {
+    margin-bottom: 20px;
+    .dashboard__label {
+      font-weight: bold;
+    }
+
+    .dashboard__value {
+      &.dashboard__value--text {
+
+      }
+
+      &.dashboard__value-list {
+
+      }
+    }
+  }
+}

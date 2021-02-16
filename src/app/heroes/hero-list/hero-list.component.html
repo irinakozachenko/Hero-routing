@@ -1,12 +1,14 @@
 <h2>HEROES</h2>
-<ul class="heroes">
+<ul class="list">
   <li *ngFor="let hero of heroes$ | async"
-      [class.selected]="hero.id === selectedId">
-    <a [routerLink]="['/hero', hero.id]">
-      <span class="badge" [style.backgroundColor]="hero.color">
+      [class.list__item--selected]="hero.id === selectedId"
+      [class.list__item--disabled]="hero.isHoliday"
+      class="list__item">
+    <a class="list__link" [routerLink]="['/hero', hero.id]">
+      <div class="list__badge"  [style.backgroundColor]="hero.color">
         {{ hero.id }}
-      </span>
-      {{ hero.name }}
+      </div>
+      <div>{{ hero.name }}</div>
     </a>
   </li>
 </ul>

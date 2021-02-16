@@ -1,18 +1,24 @@
 <h2>HEROES</h2>
-<div *ngIf="hero$ | async as hero">
-  <h3>"{{ hero.name }}"</h3>
-  <div>
-    <label>Id: </label>{{ hero.id }}</div>
-  <div>
-    <label>Name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name"/>
+<div class="info" *ngIf="hero$ | async as hero">
+  <div class="info__title">"{{ hero.name }}"</div>
+  <div class="info__block">
+    <label class="info__label">Id: </label>
+    <span class="info__value info__value--readonly">{{ hero.id }}</span>
   </div>
-  <div>
-    <label>Color: </label>
-    <input [(ngModel)]="hero.color" placeholder="color"/>
+  <div class="info__block">
+    <label class="info__label">Name: </label>
+    <input class="info__value info__value--text" [(ngModel)]="hero.name" placeholder="name"/>
+  </div>
+  <div class="info__block">
+    <label class="info__label">Color: </label>
+    <input  class="info__value info__value--text" [(ngModel)]="hero.color" placeholder="color"/>
+  </div>
+  <div class="info__block">
+    <label class="info__label">Holiday: </label>
+    <input class="info__value info__value--checkbox" [(ngModel)]="hero.isHoliday"  type="checkbox" placeholder="holiday"/>
   </div>
   <p>
-    <button (click)="gotoHeroes(hero)">Back</button>
+    <button class="button back" (click)="gotoHeroes(hero)">Back</button>
   </p>
 </div>
 
