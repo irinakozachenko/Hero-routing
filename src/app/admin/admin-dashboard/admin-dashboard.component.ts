@@ -7,7 +7,7 @@ import { SelectivePreloadingStrategyService } from '../../selective-preloading-s
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  styleUrls: ['./admin-dashboard.component.scss']
 })
 
 export class AdminDashboardComponent implements OnInit {
@@ -29,7 +29,6 @@ export class AdminDashboardComponent implements OnInit {
       .pipe(
         map(params =>
           {
-            console.log(params.get('session_id'));
             return params.get('session_id') || 'None';
           })
         );

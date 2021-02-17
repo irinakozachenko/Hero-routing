@@ -1,8 +1,8 @@
 <h3>ADMIN</h3>
-<nav>
-  <a routerLink="./" routerLinkActive="active"
+<nav class="menu">
+  <a  class="menu__item" routerLink="./" routerLinkActive="menu__item--active"
     [routerLinkActiveOptions] = "{ exact: true }">Dashboard</a>
-  <a routerLink="./crisis" routerLinkActive="active">Manage Crisis</a>
-  <a routerLink="./heroes" routerLinkActive="active">Manage Heroes</a>
+  <a class="menu__item" routerLink="./crisis" routerLinkActive="menu__item--active">Manage Crisis</a>
+  <a class="menu__item" routerLink="./heroes" routerLinkActive="menu__item--active">Manage Heroes</a>
 </nav>
 <router-outlet></router-outlet>
