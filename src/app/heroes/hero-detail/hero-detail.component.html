@@ -17,6 +17,14 @@
     <label class="info__label">Holiday: </label>
     <input class="info__value info__value--checkbox" [(ngModel)]="hero.isHoliday"  type="checkbox" placeholder="holiday"/>
   </div>
+  <div class="info__block">
+    <label class="info__label">Test Pipe number: </label>
+    <span class="info__value info__value--readonly">{{x | format}}</span>
+  </div>
+  <div class="info__block">
+    <label class="info__label">Test Pipe array join: </label>
+    <span class="info__value info__value--readonly">{{users | join:1}}</span>
+  </div>
   <p>
     <button class="button back" (click)="gotoHeroes(hero)">Back</button>
   </p>

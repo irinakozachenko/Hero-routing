@@ -5,14 +5,17 @@ import { Observable } from 'rxjs';
 
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
+import { FormatPipe } from 'src/app/format.pipe';
 
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.scss']
+  styleUrls: ['./hero-detail.component.scss'],
 })
 export class HeroDetailComponent implements OnInit {
   hero$: Observable<Hero>;
+  x: number = 14.54;
+  users = ["Tom", "Alice", "Sam", "Kate", "Bob"];
 
   constructor(
     private route: ActivatedRoute,

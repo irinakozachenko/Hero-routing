@@ -6,6 +6,8 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
+import { FormatPipe } from 'src/app/format.pipe';
+import { JoinPipe } from '../join.pipe';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { HeroesRoutingModule } from './heroes-routing.module';
   ],
   declarations: [
     HeroListComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    FormatPipe,
+    JoinPipe
   ]
 })
 export class HeroesModule {}

@@ -16,7 +16,7 @@
     position: relative;
     min-height: 35px;
     border-radius: $base-radius;
-    flex: 0 0 calc(50% - 30px);
+    flex: 0 0 calc(50% - #{$base-margin*3});
     margin: $base-margin*1.5;
     margin-top: 0;
     background-color: #EEE;
@@ -71,7 +71,7 @@
 @media (max-width: $base-smmedia) {
   .list {
     &__item {
-      flex: 0 0 calc(100% - 30px);
+      flex: 0 0 calc(100% - #{$base-margin*3});
     }
   }
 }

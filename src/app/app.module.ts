@@ -15,6 +15,8 @@ import { AdminModule } from './admin/admin.module';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthModule } from './auth/auth.module';
 import { Router, NavigationExtras } from '@angular/router';
+import { FormatPipe } from 'src/app/format.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,7 @@ import { Router, NavigationExtras } from '@angular/router';
     HeroesModule,
     AuthModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
 
   ],
   bootstrap: [AppComponent]
