@@ -1,13 +1,13 @@
-<div class="contact">
-  <h3>Contact Crisis Center</h3>
-  <div class="contact__details" *ngIf="details">
+<div class="info">
+  <div class="info__title">Contact Crisis Center</div>
+  <div class="info__title" *ngIf="details">
     {{ details }}
   </div>
-  <div class="contact__block">
-    <label class="contact__label">Message: </label>
-    <textarea class="contact__value" [(ngModel)]="message" rows="10" cols="35" [disabled]="sending"></textarea>
+  <div class="info__block">
+    <label class="info__label">Message: </label>
+    <textarea class="info__value info__value--textarea" [(ngModel)]="message" rows="10" cols="35" [disabled]="sending"></textarea>
   </div>
-  <div class="contact__buttons" *ngIf="!sending">
+  <div class="info__block" *ngIf="!sending">
     <button (click)="send()">Send</button>
     <button (click)="cancel()">Cancel</button>
   </div>
