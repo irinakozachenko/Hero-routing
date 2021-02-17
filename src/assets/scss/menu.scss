@@ -1,0 +1,31 @@
+.menu {
+  display: flex;
+	justify-content: flex-end;
+
+  &__item {
+    padding: $base-padding ($base-padding + 5px);
+    text-decoration: none;
+    margin-right: $base-margin;
+    margin-top: $base-margin;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: $base-radius;
+    color: #607D8B;
+
+    &:hover {
+      color: #039be5;
+      background-color: #CFD8DC;
+    }
+
+    &--active {
+      color: #039be5;
+    }
+  }
+}
+
+
+@media (max-width: $base-smmedia) {
+  .menu {
+      flex-direction: column;
+  }
+}

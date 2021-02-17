@@ -3,8 +3,8 @@
     [class.list__item--selected]="crisis.id === selectedId"
     class="list__item">
     <a class="list__link" [routerLink]="[crisis.id]">
-      <span class="list__badge">{{ crisis.id }}</span>
-      <span>{{ crisis.name }}</span>
+      <span class="list__id">{{ crisis.id }}</span>
+      <span class="list__name">{{ crisis.name }}</span>
     </a>
   </li>
 </ul>

@@ -5,10 +5,10 @@
       [class.list__item--disabled]="hero.isHoliday"
       class="list__item">
     <a class="list__link" [routerLink]="['/hero', hero.id]">
-      <div class="list__badge"  [style.backgroundColor]="hero.color">
+      <div class="list__id"  [style.backgroundColor]="hero.color">
         {{ hero.id }}
       </div>
-      <div>{{ hero.name }}</div>
+      <div class="list__name">{{ hero.name }}</div>
     </a>
   </li>
 </ul>
